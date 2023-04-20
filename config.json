@@ -1,0 +1,5 @@
+{
+  "mongo_url": "",
+  "dbname": "",
+  "session_secret": ""
+}
