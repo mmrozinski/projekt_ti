@@ -1,0 +1,55 @@
+<% var userId %>
+<% var darkMode %>
+<% var height %>
+<% var angle %>
+<% var speed %>
+<% var animationSpeed %>
+<% if (!height) { %>
+    <% height = 0 %>
+<% } %>
+<% if (!angle) { %>
+    <% angle = 45 %>
+<% } %>
+<% if (!speed) { %>
+    <% speed = 0.5 %>
+<% } %>
+<% if (!animationSpeed) { %>
+    <% animationSpeed = 0.5 %>
+<% } %>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <% if (!darkMode) { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general.css">' %>
+    <% } else { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general_dark.css">' %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <script src="js/animation.js"></script>
+</head>
+<body>
+<%- include("partials/navbar.ejs", {activeNav: "animation", userId: userId, darkMode: darkMode}) %>
+<div class="content">
+    <br>
+    <form>
+        <input type="range" id="heightSlider" min="0" max="600" value="<%= height %>" step="1"><label for="heightSlider">Wysokość</label><br>
+        <input type="range" id="angleSlider" min="0" max="90" value="<%= angle %>" step="1"><label
+                for="angleSlider">Kąt</label><br>
+        <input type="range" id="speedSlider" min="0" max="1" value="<%= speed %>" step="0.01"><label for="speedSlider">Prędkość</label><br>
+        <input type="range" id="animationSpeedSlider" min="0" max="1" value="<%= animationSpeed %>" step="0.01"><label
+                for="animationSpeedSlider">Szybkość animacji</label><br>
+        <input type="button" id="start" value="Start">
+        <% if (userId) { %>
+            <%- '<input type="button" id="save" value="Zapisz" onclick="_saveAnimationData(this.form)">' %>
+        <% } %>
+        <br>
+    </form>
+    <div id="dataInfo"></div>
+    <br>
+    <canvas id="mainCanvas" width="1000" height="600"></canvas>
+    <script src="js/canvas.js"></script>
+</div>
+</body>
+</html>

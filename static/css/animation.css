@@ -1,0 +1,17 @@
+form {
+    margin: 2%;
+}
+
+body {
+    min-width: 1100px;
+    min-height: 800px;
+}
+
+#dataInfo {
+    margin-left: 2%;
+}
+
+canvas {
+    margin: 0 2% 2% 2%;
+    border-style: solid;
+}

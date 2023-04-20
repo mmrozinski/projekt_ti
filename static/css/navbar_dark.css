@@ -1,0 +1,35 @@
+#navbar {
+    margin: auto;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #131313;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    background-color: #252525;
+}
+
+#navbar .profile {
+    float: right;
+}
+
+.active {
+    background-color: #382e5d;
+}

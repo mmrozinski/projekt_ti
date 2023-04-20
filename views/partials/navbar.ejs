@@ -1,0 +1,31 @@
+<% if (typeof activeNav === 'undefined') { %>
+    <% var activeNav = null %>
+<% } %>
+<% if (typeof userId === 'undefined') { %>
+    <% var userId = null %>
+<% } %>
+<% if (typeof darkMode === 'undefined') { %>
+    <% var darkMode = false %>
+<% } %>
+
+<% if (!darkMode) { %>
+    <%- '<link rel="stylesheet" type="text/css" href="css/navbar.css">' %>
+<% } else { %>
+    <%- '<link rel="stylesheet" type="text/css" href="css/navbar_dark.css">' %>
+<% } %>
+
+<nav id="navbar">
+    <ul>
+        <li><a href="/" <%- activeNav === "home" ? 'class="active"' : '' %>>Strona główna</a></li>
+        <li><a href="/animation" <%- activeNav === "animation" ? 'class="active"' : '' %>>Animacja</a></li>
+        <li><a href="/about" <%- activeNav === "about" ? 'class="active"' : '' %>>O mnie</a></li>
+        <% if (!userId) { %>
+            <li class="profile"><a href="/login" <%- activeNav === "profile" ? 'class="active"' : '' %>>Logowanie</a></li>
+        <% } else { %>
+            <li class="profile"><a href="/logout">Wyloguj</a></li>
+            <li class="profile"><a
+                        href="/preferences" <%- activeNav === "profile" ? 'class="active"' : '' %>><%= userId %></a>
+            </li>
+        <% } %>
+    </ul>
+</nav>

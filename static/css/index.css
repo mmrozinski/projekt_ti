@@ -1,0 +1,23 @@
+.content {
+    padding: 2%;
+    min-height: 93%;
+}
+
+header h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+section {
+    text-align: justify;
+}
+
+footer {
+    text-align: right;
+    font-style: italic;
+}
+
+footer a {
+    color: inherit;
+
+}

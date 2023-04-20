@@ -1,0 +1,62 @@
+<% var userId %>
+<% var darkMode %>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <% if (!darkMode) { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general.css">' %>
+    <% } else { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general_dark.css">' %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<%- include("partials/navbar.ejs", {activeNav: "home", userId: userId, darkMode: darkMode}) %>
+
+<article class="content">
+    <header><h1>Rzut ukośny</h1></header>
+    <section>
+        <h2>Ruch pocisku</h2>
+        <p>
+            Ruch pocisku to forma ruchu doświadczanego przez obiekt lub cząstkę (pocisk), która jest wyrzucana w polu
+        grawitacyjnym, na przykład z powierzchni Ziemi, i porusza się po zakrzywionej ścieżce wyłącznie pod działaniem
+        grawitacji. W szczególnym przypadku ruchu pocisku Ziemi większość obliczeń zakłada, że skutki oporu powietrza są
+        bierne i pomijalne. Zakrzywiony tor obiektów w ruchu pocisku został ukazany przez Galileusza jako parabola, ale
+        może być również linią prostą w szczególnym przypadku, gdy jest rzucony bezpośrednio w górę. Badanie takich
+        ruchów nazywa się balistyką, a ich trajektoria jest trajektorią balistyczną.
+        </p>
+    </section>
+    <section>
+        <h2>Siły</h2>
+        <p>
+            Jedyną siłą o znaczeniu matematycznym, która
+        aktywnie działa na obiekt, jest grawitacja, która działa w dół, nadając obiektowi przyspieszenie w dół w
+        kierunku
+        środka masy Ziemi. Ze względu na bezwładność obiektu żadna siła zewnętrzna nie jest potrzebna do utrzymania
+        poziomej
+        składowej prędkości ruchu obiektu. Uwzględnienie innych sił, takich jak opór aerodynamiczny czy napęd wewnętrzny
+        (jak w rakiecie), wymaga dodatkowej analizy. Pocisk balistyczny to pocisk kierowany tylko podczas stosunkowo
+        krótkiej początkowej fazy lotu z napędem, którego pozostały kurs rządzi się prawami mechaniki klasycznej.
+        </p>
+    </section>
+    <section>
+        <h2>Trajektorie pocisku z oporem powietrza i różnymi prędkościami początkowymi</h2>
+        <p>
+            Elementarne równania balistyczne pomijają prawie każdy czynnik z wyjątkiem prędkości początkowej i założonego
+        stałego przyspieszenia grawitacyjnego. Praktyczne rozwiązania problemu balistycznego często wymagają rozważenia
+        oporu powietrza, wiatrów bocznych, ruchu celu, zmiennego przyspieszenia spowodowanego grawitacją, a w przypadku
+        takich problemów, jak wystrzelenie rakiety z jednego punktu na Ziemi do drugiego, obrotu Ziemi. Szczegółowe
+        matematyczne rozwiązania problemów praktycznych zazwyczaj nie mają rozwiązań w postaci wzorów jawnuch i dlatego
+        wymagają zastosowania metod numerycznych.
+        </p>
+    </section>
+    <br>
+    <footer>
+        Źródło: <a href="https://en.wikipedia.org/wiki/Projectile_motion">Wikipedia</a>
+    </footer>
+</article>
+</body>
+</html>

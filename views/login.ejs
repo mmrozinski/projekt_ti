@@ -1,0 +1,39 @@
+<% var userId %>
+<% var darkMode %>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="js/login.js"></script>
+    <% if (!darkMode) { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general.css">' %>
+    <% } else { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general_dark.css">' %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<%- include("partials/navbar.ejs", {activeNav: "profile", userId: userId, darkMode: darkMode}) %>
+<div class="content">
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="username">Nazwa użytkownika</label></td>
+                <td><input type="text" name="username" id="username" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Hasło</label></td>
+                <td><input type="password" name="password" id="password" required></td>
+            </tr>
+        </table>
+        <input type="button" id="loginButton" name="login" value="Zaloguj" onclick="_login(this.form)">
+        <input type="button" name="register" value="Rejestracja" onclick="_register(this.form)">
+        <br>
+        <br>
+        <div id="loginInfo"></div>
+    </form>
+</div>
+</body>
+</html>

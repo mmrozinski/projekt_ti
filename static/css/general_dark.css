@@ -1,0 +1,18 @@
+html {
+    background-color: #818181;
+    height: 100%;
+}
+
+body {
+    width: 80%;
+    margin: 1% auto auto;
+    min-height: 90%;
+    height: 90%;
+    background-color: #6c6e5e;
+}
+
+.content {
+    background-color: #343434;
+    min-height: 100%;
+    color: white;
+}

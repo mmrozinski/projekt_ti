@@ -1,0 +1,24 @@
+<% var userId %>
+<% var darkMode %>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <% if (!darkMode) { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general.css">' %>
+    <% } else { %>
+        <%- '<link rel="stylesheet" type="text/css" href="css/general_dark.css">' %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+</head>
+<body>
+<%- include("partials/navbar.ejs", {activeNav: "about", userId: userId, darkMode: darkMode}) %>
+
+<section class="content">
+    <h3>Autor:</h3>
+            Michał Mroziński
+</section>
+</body>
+</html>
